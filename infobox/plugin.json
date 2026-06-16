@@ -1,0 +1,31 @@
+{
+  "name": "infobox",
+  "version": "1.0.0",
+  "label": "Info Box",
+  "description": "Highlighted information box with icon, title, and message",
+  "icon": "<svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><path d=\"M12 16v-4M12 8h.01\"/></svg>",
+  "cards": [
+    {
+      "name": "infobox",
+      "label": "Info Box",
+      "fields": [
+        {
+          "key": "boxType",
+          "type": "text",
+          "title": "Type (info, warning, success, danger)",
+          "default": "info"
+        },
+        {
+          "key": "title",
+          "type": "text",
+          "title": "Title"
+        },
+        {
+          "key": "message",
+          "type": "textarea",
+          "title": "Message"
+        }
+      ]
+    }
+  ]
+}

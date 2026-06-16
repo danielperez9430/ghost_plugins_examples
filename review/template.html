@@ -1,0 +1,42 @@
+<div class="review-card">
+  <div class="review-card__header">
+    <div class="review-card__score">{{score}}<span class="review-card__score-label">{{scoreLabel}}</span></div>
+    <div class="review-card__info">
+      <h3 class="review-card__title">{{title}}</h3>
+      {{#if subtitle}}<span class="review-card__subtitle">{{subtitle}}</span>{{/if}}
+    </div>
+  </div>
+  {{#if pros}}
+  <div class="review-card__pros-cons">
+    <div>
+      <div class="review-card__section-title review-card__section-title--pro">A FAVOR</div>
+      <div class="review-card__list">
+        {{#each pros}}
+        <div class="review-card__item review-card__item--pro"><span class="review-card__item-icon">&#10003;</span><span>{{this}}</span></div>
+        {{/each}}
+      </div>
+    </div>
+    {{#if cons}}
+    <div>
+      <div class="review-card__section-title review-card__section-title--con">EN CONTRA</div>
+      <div class="review-card__list">
+        {{#each cons}}
+        <div class="review-card__item review-card__item--con"><span class="review-card__item-icon">&#10007;</span><span>{{this}}</span></div>
+        {{/each}}
+      </div>
+    </div>
+    {{/if}}
+  </div>
+  {{/if}}
+  {{#if ratings}}
+  <div class="review-card__ratings">
+    {{#each ratings}}
+    <div class="review-card__rating">
+      <span class="review-card__rating-label">{{label}}</span>
+      <div class="review-card__rating-bar"><div class="review-card__rating-fill" style="width:{{percent}}%" data-score="{{score}}"></div></div>
+      <span class="review-card__rating-score">{{score}}</span>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>

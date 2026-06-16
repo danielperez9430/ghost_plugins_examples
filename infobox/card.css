@@ -1,0 +1,97 @@
+.infobox-card {
+  display: flex;
+  gap: 16px;
+  padding: 20px 24px;
+  margin: 24px 0;
+  border-radius: 10px;
+  border-left: 5px solid;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+}
+
+/* Type variants */
+.infobox-card--info {
+  background: #eff6ff;
+  border-color: #3b82f6;
+  color: #1e40af;
+}
+
+.infobox-card--warning {
+  background: #fffbeb;
+  border-color: #f59e0b;
+  color: #92400e;
+}
+
+.infobox-card--success {
+  background: #f0fdf4;
+  border-color: #22c55e;
+  color: #166534;
+}
+
+.infobox-card--danger {
+  background: #fef2f2;
+  border-color: #ef4444;
+  color: #991b1b;
+}
+
+.infobox-card__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 2px;
+}
+
+.infobox-card__icon-symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+/* Icons per type */
+.infobox-card--info .infobox-card__icon-symbol::after { content: 'i'; }
+.infobox-card--warning .infobox-card__icon-symbol::after { content: '!'; }
+.infobox-card--success .infobox-card__icon-symbol::after { content: '✓'; }
+.infobox-card--danger .infobox-card__icon-symbol::after { content: '✗'; }
+
+.infobox-card--info .infobox-card__icon-symbol {
+  background: #dbeafe;
+  color: #3b82f6;
+}
+
+.infobox-card--warning .infobox-card__icon-symbol {
+  background: #fef3c7;
+  color: #f59e0b;
+}
+
+.infobox-card--success .infobox-card__icon-symbol {
+  background: #dcfce7;
+  color: #22c55e;
+}
+
+.infobox-card--danger .infobox-card__icon-symbol {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+.infobox-card__content {
+  flex: 1;
+}
+
+.infobox-card__title {
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0 0 4px 0;
+  color: inherit;
+}
+
+.infobox-card__message {
+  font-size: 0.875rem;
+  margin: 0;
+  color: inherit;
+  opacity: 0.85;
+}

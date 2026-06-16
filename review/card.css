@@ -1,0 +1,213 @@
+/* Plugin Card — Scoped styles for both editor and frontend */
+/* Use .plugin-card-scope to isolate from Koenig/Tailwind overrides */
+.plugin-card-scope,
+.plugin-card-scope * {
+  box-sizing: border-box;
+}
+
+.review-card {
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 32px;
+  margin: 32px 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  color: #1a202c;
+  line-height: 1.5;
+}
+
+.review-card * {
+  font-family: inherit;
+}
+
+.review-card__header {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.review-card__score {
+  background: #00FF88;
+  color: #000;
+  font-size: 2rem;
+  font-weight: 700;
+  min-width: 80px;
+  text-align: center;
+  padding: 16px;
+  line-height: 1;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.review-card__score-label {
+  display: block;
+  font-size: 0.625rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: 4px;
+  opacity: 0.7;
+}
+
+.review-card__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.review-card__title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a202c;
+  margin: 0;
+}
+
+.review-card__subtitle {
+  font-size: 0.75rem;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.review-card__pros-cons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.review-card__section-title {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.review-card__section-title--pro {
+  color: #16a34a;
+}
+.review-card__section-title--pro::before {
+  content: '+';
+  font-weight: 700;
+}
+
+.review-card__section-title--con {
+  color: #dc2626;
+}
+.review-card__section-title--con::before {
+  content: '\2212';
+  font-weight: 700;
+}
+
+.review-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.review-card__item {
+  font-size: 0.875rem;
+  color: #374151;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.review-card__item-icon {
+  flex-shrink: 0;
+  margin-top: 1px;
+  font-weight: 700;
+}
+
+.review-card__item--pro .review-card__item-icon {
+  color: #16a34a;
+}
+.review-card__item--con .review-card__item-icon {
+  color: #dc2626;
+}
+
+.review-card__ratings {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.review-card__rating {
+  display: grid;
+  grid-template-columns: 140px 1fr 40px;
+  align-items: center;
+  gap: 12px;
+}
+
+.review-card__rating-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.review-card__rating-bar {
+  height: 8px;
+  background: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.review-card__rating-fill {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.6s ease;
+}
+
+/* Color-coded by score: red (0-4), orange (5-7), green (8-10) */
+.review-card__rating-fill[data-score="0"],
+.review-card__rating-fill[data-score="1"],
+.review-card__rating-fill[data-score="2"],
+.review-card__rating-fill[data-score="3"],
+.review-card__rating-fill[data-score="4"],
+.review-card__rating-fill[data-score^="0."],
+.review-card__rating-fill[data-score^="1."],
+.review-card__rating-fill[data-score^="2."],
+.review-card__rating-fill[data-score^="3."],
+.review-card__rating-fill[data-score^="4."] { background: #ef4444; }
+
+.review-card__rating-fill[data-score="5"],
+.review-card__rating-fill[data-score="6"],
+.review-card__rating-fill[data-score="7"],
+.review-card__rating-fill[data-score^="5."],
+.review-card__rating-fill[data-score^="6."],
+.review-card__rating-fill[data-score^="7."] { background: #f59e0b; }
+
+.review-card__rating-fill[data-score="8"],
+.review-card__rating-fill[data-score="9"],
+.review-card__rating-fill[data-score="10"],
+.review-card__rating-fill[data-score^="8."],
+.review-card__rating-fill[data-score^="9."] { background: #22c55e; }
+
+.review-card__rating-score {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1a202c;
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .review-card__header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .review-card__pros-cons {
+    grid-template-columns: 1fr;
+  }
+  .review-card__rating {
+    grid-template-columns: 100px 1fr 36px;
+    gap: 8px;
+  }
+}
